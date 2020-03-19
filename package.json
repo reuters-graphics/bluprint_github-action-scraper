@@ -1,4 +1,5 @@
 {
+  "name": "GitHub_action_scraper",
   "private": true,
   "scripts": {
     "scrape": "npx ./index.js"
@@ -6,5 +7,11 @@
   "devDependencies": {
     "@reuters-graphics/eslint-config": "^0.0.2",
     "eslint": "^6.8.0"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.642.0",
+    "axios": "^0.19.2",
+    "cheerio": "^1.0.0-rc.3",
+    "lodash": "^4.17.15"
   }
 }

@@ -2,5 +2,23 @@
   "bluprint": "^0.4.3",
   "name": "GitHub action scraper",
   "category": "",
-  "actions": []
+  "actions": [{
+    "action": "remove",
+    "paths": [
+      "README.md"
+    ]
+  }, {
+    "action": "move",
+    "paths": [
+      ["github/", ".github/"],
+      ["README_template.md", "README.md"]
+    ]
+  }, {
+    "action": "execute",
+    "cmds": [
+      ["yarn"],
+      ["git", ["init"]]
+    ],
+    "silent": true
+  }]
 }

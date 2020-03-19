@@ -13,7 +13,7 @@ A [bluprint](https://github.com/reuters-graphics/bluprint) for scrapers executed
 ### Quickstart
 
 ```
-$ bluprint add reuters-graphics/bluprint
+$ bluprint add reuters-graphics/bluprint_github-action-scraper
 $ mkdir new-project && cd new-project
 $ bluprint start
 ```

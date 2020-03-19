@@ -5,6 +5,8 @@ on:
     branches:
       - master
   schedule:
+    # Customize to whatever interval you need:
+    # https://crontab.guru/every-5-minutes
     - cron:  '0 * * * *'
 
 jobs:
