@@ -3,6 +3,13 @@
   "name": "GitHub action scraper",
   "category": "",
   "actions": [{
+    "action": "prompt",
+    "questions": [{
+      "type": "text",
+      "name": "projectName",
+      "message": "What should we call this project?"
+    }]
+  }, {
     "action": "remove",
     "paths": [
       "README.md"
@@ -14,11 +21,24 @@
       ["README_template.md", "README.md"]
     ]
   }, {
+    "action": "render",
+    "engine": "mustache",
+    "files": ["README.md"]
+  }, {
+    "action": "regexreplace",
+    "files": ["package.json"],
+    "replace": [
+      ["projectName", "{{#slugify}}{{ projectName }}{{/slugify}}"]
+    ]
+  }, {
     "action": "execute",
     "cmds": [
       ["yarn"],
       ["git", ["init"]]
     ],
     "silent": true
+  }, {
+    "action": "log",
+    "msg": "{green Ready to build you scraper!} Check out the README for further instructions."
   }]
 }

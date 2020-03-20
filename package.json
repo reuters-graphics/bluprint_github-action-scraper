@@ -1,5 +1,5 @@
 {
-  "name": "GitHub_action_scraper",
+  "name": "projectName",
   "private": true,
   "scripts": {
     "scrape": "npx ./index.js"
