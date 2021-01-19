@@ -17,7 +17,7 @@ jobs:
       AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
       AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       SERVER_WORKFLOW: true
-      TEAMS_WEBHOOK: https://outlook.office.com/webhook/c0949280-94a2-469a-a719-12397824db0a@62ccb864-6a1a-4b5d-8e1c-397dec1a8258/IncomingWebhook/946e7a109966464087df4b08162ccfab/ddf11b96-4088-4af7-bfc8-a172f3395547
+      TEAMS_WEBHOOK: ${{ secrets.TEAMS_WEBHOOK }}
     steps:
     - uses: actions/checkout@v2
     - uses: actions/setup-node@v1
