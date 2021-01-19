@@ -25,10 +25,14 @@
     "engine": "mustache",
     "files": ["README.md"]
   }, {
+    "action": "render",
+    "engine": "mustache",
+    "files": ["index.js"]
+  },{
     "action": "regexreplace",
     "files": ["package.json"],
     "replace": [
-      ["projectName", "{{#slugify}}{{ projectName }}{{/slugify}}"]
+      ["projectName", "action_{{#slugify}}{{ projectName }}{{/slugify}}"]
     ]
   }, {
     "action": "execute",

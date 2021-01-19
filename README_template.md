@@ -1,6 +1,11 @@
 ![](badge.svg)
 
 # {{ projectName }}
+![Scrape data](https://github.com/reuters-graphics/action_{{ projectName }}/workflows/Scrape%20data/badge.svg)
+
+## Data endpoint
+
+`https://graphics.thomsonreuters.com/data/2020/{{ projectName }}/data.json`
 
 A GitHub Action-based scraper. Built from our house [bluprint](https://github.com/reuters-graphics/bluprint_github-action-scraper).
 
