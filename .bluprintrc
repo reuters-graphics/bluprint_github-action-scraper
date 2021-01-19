@@ -46,6 +46,6 @@
     "msg": "{green Ready to build you scraper!} Check out the README for development instructions."
   }, {
     "action": "log",
-    "msg": "Name your repository as {green action_{{#slugify}}{{ projectName }}{{/slugify}}}."
+    "msg": "Prefix the name of your git repo with {green action_}"
   }]
 }
