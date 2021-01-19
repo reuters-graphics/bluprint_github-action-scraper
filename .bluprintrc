@@ -43,8 +43,9 @@
     "silent": true
   }, {
     "action": "log",
-    "msg": "{green Ready to build you scraper!} 
-    Name your repository as {green action_{{#slugify}}{{ projectName }}{{/slugify}}}.
-    Check out the README for development instructions."
+    "msg": "{green Ready to build you scraper!} Check out the README for development instructions."
+  }, {
+    "action": "log",
+    "msg": "Name your repository as {green action_{{#slugify}}{{ projectName }}{{/slugify}}}."
   }]
 }
