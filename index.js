@@ -1,7 +1,8 @@
+const d3DSV = require('d3-dsv');
 const fetchData = require('./lib/fetchData');
 const publishJSON = require('./lib/publishJSON');
 const publishCSV = require('./lib/publishCSV');
-const d3DSV = require('d3-dsv');
+const logger = require('./lib/logger');
 
 /* Your data will be published on the server to a URL like:
 // https://graphics.thomsonreuters.com/data/2020/{{ projectName }}/data.json
@@ -14,16 +15,29 @@ const run = async() => {
   const url = 'https://someapi.com/data/';
   const rawData = await fetchData(url);
 
-  /* STEP 2: Format the data as you need */
+  /* STEP 2: Validate your data */
+  await validateData(rawData);
+
+  /* STEP 3: Format the data as you need */
   const EXPORT_DATA = await formatData(rawData);
 
-  /* STEP 3: Publish the data to TR server */
+  /* STEP 4: Publish the data to TR server */
   const fileName = 'data.json';
   await publishJSON(EXPORT_DATA, AWS_DIRECTORY, fileName);
+
+  /* 🏁 FINALE: Log you success! */
+  // Checkout message formats for Teams: https://github.com/reuters-graphics/teams-klaxon#message-formats
+  await logger.log({ text: '✅ Successful scrape for {{ projectName }}!' });
 };
 run();
 
-/* OTHER STUFF */
+/* OTHER STUFF... (You can move these to other files, too.) */
+const validateData = async(data) => {
+  /* Test to make sure the data you scrape is what you expect! */
+  if (Array.isArray(data)) return; // Good data!
+  await logger.error({ text: '❌ OH NO! Bad data!' });
+};
+
 const formatData = async(data) => {
   /* Some data formatting goes here...
   // If the fetched file is not a JSON, you need to parse it correctly.
