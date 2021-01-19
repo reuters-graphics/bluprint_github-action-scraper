@@ -5,7 +5,7 @@ const publishCSV = require('./lib/publishCSV');
 const logger = require('./lib/logger');
 
 /* Your data will be published on the server to a URL like:
-// https://graphics.thomsonreuters.com/data/2020/{{ projectName }}/data.json
+// https://graphics.thomsonreuters.com/data/2021/{{ projectName }}/data.json
 */
 const AWS_DIRECTORY = '{{ projectName }}';
 
@@ -25,7 +25,7 @@ const run = async() => {
   const fileName = 'data.json';
   await publishJSON(EXPORT_DATA, AWS_DIRECTORY, fileName);
 
-  /* 🏁 FINALE: Log you success! */
+  /* 🏁 FINALE: Log your success! */
   // Checkout message formats for Teams: https://github.com/reuters-graphics/teams-klaxon#message-formats
   await logger.log({ text: '✅ Successful scrape for {{ projectName }}!' });
 };
