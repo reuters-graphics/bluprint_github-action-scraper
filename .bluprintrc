@@ -23,7 +23,7 @@
   }, {
     "action": "render",
     "engine": "mustache",
-    "files": ["README.md", "index.js", "lib/logger.js"]
+    "files": ["README.md", "index.js", "lib/logger.js", "lib/fetchData.js", "lib/publishCSV.js", "lib/publishJSON.js"]
   }, {
     "action": "regexreplace",
     "files": ["package.json"],
