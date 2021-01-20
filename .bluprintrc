@@ -7,7 +7,7 @@
     "questions": [{
       "type": "text",
       "name": "projectName",
-      "message": "What should we call this project?"
+      "message": "What's your project slug, e.g., my-data-scraper?"
     }]
   }, {
     "action": "remove",
