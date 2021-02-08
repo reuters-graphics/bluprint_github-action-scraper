@@ -29,7 +29,6 @@ const run = async() => {
   // Checkout message formats for Teams: https://github.com/reuters-graphics/teams-klaxon#message-formats
   await logger.log({ title: '⚙️ {{ projectName }}', text: '✅ Successful scrape for {{ projectName }}!' });
 };
-run();
 
 /* OTHER STUFF... (You can move these to other files, too.) */
 const validateData = async(data) => {
@@ -48,3 +47,5 @@ const formatData = async(data) => {
 
   return data;
 };
+
+run();
