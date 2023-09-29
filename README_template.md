@@ -7,7 +7,7 @@ A GitHub Action-based scraper. Built from our house [bluprint](https://github.co
 
 ## Data endpoint
 `data.json` 
-[https://graphics.thomsonreuters.com/data/2020/{{ projectName }}/data.json](https://graphics.thomsonreuters.com/data/2020/{{ projectName }}/data.json)
+[https://graphics.thomsonreuters.com/data/2021/{{ projectName }}/data.json](https://graphics.thomsonreuters.com/data/2021/{{ projectName }}/data.json)
 
 
 ## Developing

@@ -27,15 +27,15 @@ const run = async() => {
 
   /* 🏁 FINALE: Log your success! */
   // Checkout message formats for Teams: https://github.com/reuters-graphics/teams-klaxon#message-formats
-  await logger.log({ text: '✅ Successful scrape for {{ projectName }}!' });
+  await logger.log({ title: '⚙️ {{ projectName }}', text: '✅ Successful scrape for {{ projectName }}!' });
 };
-run();
 
 /* OTHER STUFF... (You can move these to other files, too.) */
 const validateData = async(data) => {
   /* Test to make sure the data you scrape is what you expect! */
-  if (Array.isArray(data)) return; // Good data!
-  await logger.error({ text: '❌ OH NO! Bad data!' });
+  if (Array.isArray(data) || JSON.parse(JSON.stringify(data))) { return; } // Good data!
+
+  await logger.error({ title: '⚙️ {{ projectName }}', text: '❌ OH NO! Bad data!' });
 };
 
 const formatData = async(data) => {
@@ -47,3 +47,5 @@ const formatData = async(data) => {
 
   return data;
 };
+
+run();
