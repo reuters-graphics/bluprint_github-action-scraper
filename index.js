@@ -1,8 +1,8 @@
-const d3DSV = require('d3-dsv');
-const fetchData = require('./lib/fetchData');
-const publishJSON = require('./lib/publishJSON');
-const publishCSV = require('./lib/publishCSV');
-const logger = require('./lib/logger');
+import d3DSV from 'd3-dsv';
+import fetchData from './lib/fetchData.js';
+import logger from './lib/logger.js';
+import publishCSV from './lib/publishCSV.js';
+import publishJSON from './lib/publishJSON.js';
 
 /* Your data will be published on the server to a URL like:
 // https://graphics.thomsonreuters.com/data/2021/{{ projectName }}/data.json

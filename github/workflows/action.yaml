@@ -19,9 +19,10 @@ jobs:
       SERVER_WORKFLOW: true
       TEAMS_WEBHOOK: ${{ secrets.TEAMS_WEBHOOK }}
     steps:
-    - uses: actions/checkout@v2
-    - uses: actions/setup-node@v1
+    - uses: actions/checkout@v3
+    - uses: actions/setup-node@v3
       with:
-        node-version: '12.x'
+        node-version: '18.x'
+        cache: 'npm'
     - run: npm install
     - run: npm run scrape
